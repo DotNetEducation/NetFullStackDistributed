@@ -1,0 +1,67 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Domain",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build domain",
+            "program": "${workspaceFolder}/Domain/bin/Debug/net5.0/domain.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}/Domain",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Lookup",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build lookup",
+            "program": "${workspaceFolder}/Lookup/bin/Debug/net5.0/lookup.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}/Lookup",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Mediator",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build mediator",
+            "program": "${workspaceFolder}/Mediator/bin/Debug/net5.0/mediator.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}/Mediator",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Api",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build api",
+            "program": "${workspaceFolder}/Api/bin/Debug/net5.0/api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Api",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Full",
+            "configurations": ["Domain", "Api", "Lookup", "Mediator"]
+        }
+    ]
+}
