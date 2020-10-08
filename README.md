@@ -8,4 +8,4 @@ Example Solution Of Enterprise Stack Using .NET 5
  
 ### Solution Breakdown
 
-https://dotneteducation.com/enterprise-architecture-playground/
+https://dotneteducation.com/dotnet-distributed-stack/
