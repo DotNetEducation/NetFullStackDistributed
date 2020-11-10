@@ -26,7 +26,7 @@ namespace Domain
                 {
                     services.AddDbContext<WeatherDbContext>(options =>
                     {
-                        options.UseSqlite("Data Source=../../../../Database/weather.db");
+                        options.UseSqlite("Data Source=../../../../../Database/weather.db");
                     });
                     services.AddScoped<IWeatherForecastRepository, WeatherRespository>();
 

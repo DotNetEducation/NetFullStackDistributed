@@ -3,7 +3,7 @@ using Messages;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Protos;
-using Protos.Client;
+using Protos.Server;
 using Repository.Entities;
 using System;
 using System.Collections.Generic;

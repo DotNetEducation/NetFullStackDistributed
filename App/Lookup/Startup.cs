@@ -19,8 +19,9 @@ namespace Lookup
             services.AddGrpc();
             services.AddDbContext<WeatherDbContext>(options => 
             {
-                options.UseSqlite("Data Source=../Database/weather.db");
+                options.UseSqlite("Data Source=../../Database/weather.db");
                 options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+
             });
             services.AddScoped<IReadOnlyWeatherForecastRepository, WeatherRespository>();
         }

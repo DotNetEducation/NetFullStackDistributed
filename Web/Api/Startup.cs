@@ -14,7 +14,7 @@ using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Api.Factories;
 using Protos;
-using Protos.Client;
+using Protos.Server;
 using MassTransit;
 using Messages;
 

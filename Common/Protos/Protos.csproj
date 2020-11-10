@@ -7,9 +7,9 @@
 
   <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.13.0" />
-    <PackageReference Include="Grpc.Core" Version="2.32.0" />
-    <PackageReference Include="Grpc.Net.Client" Version="2.31.0" />
-    <PackageReference Include="Grpc.Tools" Version="2.32.0">
+    <PackageReference Include="Grpc.Core" Version="2.33.1" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.33.1" />
+    <PackageReference Include="Grpc.Tools" Version="2.33.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -17,8 +17,7 @@
 
 
   <ItemGroup>
-    <Protobuf Include="weatherClient.proto" GrpcServices="Client" />
-    <Protobuf Include="weather.proto" GrpcServices="Server" />
+    <Protobuf Include="weather.proto" GrpcServices="Client" />
   </ItemGroup>
 
 </Project>

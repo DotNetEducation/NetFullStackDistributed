@@ -1,6 +1,6 @@
-﻿using Protos.Server;
-using Repository.Entities;
+﻿using Repository.Entities;
 using System;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
@@ -8,6 +8,6 @@ namespace Repository.Interfaces
 {
     public interface IReadOnlyWeatherForecastRepository
     {
-        Task<WeatherForecastReplies> LookupWeatherForecasts(Expression<Func<WeatherForecast, bool>> filter = null);
+        Task<IEnumerable<WeatherForecast>> LookupWeatherForecasts(Expression<Func<WeatherForecast, bool>> filter = null);
     }
 }

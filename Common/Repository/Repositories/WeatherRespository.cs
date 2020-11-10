@@ -1,5 +1,4 @@
 ﻿using Google.Protobuf.WellKnownTypes;
-using Protos.Server;
 using Repository.DbContexts;
 using Repository.Entities;
 using Repository.Interfaces;
@@ -26,7 +25,7 @@ namespace Repository.Repositories
             await _weatherDbContext.SaveChangesAsync();
         }
 
-        public Task<WeatherForecastReplies> LookupWeatherForecasts(Expression<Func<WeatherForecast, bool>> filter)
+        public Task<IEnumerable<WeatherForecast>> LookupWeatherForecasts(Expression<Func<WeatherForecast, bool>> filter)
         {
             IEnumerable<WeatherForecast> weatherForecasts;
             if (filter == null)
@@ -38,24 +37,9 @@ namespace Repository.Repositories
                 weatherForecasts = _weatherDbContext.WeatherForecasts.Where(filter.Compile());
             }
 
-            var result = new WeatherForecastReplies
-            {
 
-            };
-            result.WeatherForecasts.AddRange(weatherForecasts.Select(x =>
-            {
-                x.Date = DateTime.SpecifyKind(x.Date, DateTimeKind.Utc);
-                return new WeatherForecastReply
-                {
-                    Id = x.Id,
-                    Date = Timestamp.FromDateTime(x.Date),
-                    Summary = x.Summary,
-                    TemperatureC = x.TemperatureC,
-                    TemperatureF = x.TemperatureF
-                };
-            }));
 
-            return Task.FromResult(result);
+            return Task.FromResult(weatherForecasts);
         }
 
         public async Task RemoveWeatherForecast(long weatherForecastId)
